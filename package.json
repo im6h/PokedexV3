@@ -1,0 +1,103 @@
+{
+  "name": "Pokedex",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "test": "jest",
+    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean --force",
+    "clean:android": "cd android/ && ./gradlew clean && cd .. && react-native run-android",
+    "newclear": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build && rm -rf node_modules/ && npm cache clean --force && npm i",
+    "test:watch": "jest --watch",
+    "updateSnapshot": "jest --updateSnapshot",
+    "coverage": "jest --coverage && open coverage/lcov-report/index.html || xdg-open coverage/lcov-report/index.html",
+    "android:build": "cd android && ./gradlew assembleRelease && cd ..",
+    "android:install": "cd android && ./gradlew assembleRelease && ./gradlew installRelease && cd ..",
+    "android:hockeyapp": "cd android && ./gradlew assembleRelease && puck -submit=auto app/build/outputs/apk/app-release.apk",
+    "android:devices": "$ANDROID_HOME/platform-tools/adb devices",
+    "android:logcat": "$ANDROID_HOME/platform-tools/adb logcat *:S ReactNative:V ReactNativeJS:V",
+    "android:shake": "$ANDROID_HOME/platform-tools/adb devices | grep '\\t' | awk '{print $1}' | sed 's/\\s//g' | xargs -I {} $ANDROID_HOME/platform-tools/adb -s {} shell input keyevent 82",
+    "pod:install": "cd ios && pod install && cd ..",
+    "pod:update": "cd ios && pod update && cd ..",
+    "storybook": "storybook start -p 7007"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.3.4",
+    "apisauce": "^1.0.3",
+    "color": "^3.1.0",
+    "mobx": "^5.9.4",
+    "mobx-logger": "^0.7.1",
+    "mobx-react": "^5.4.3",
+    "mobx-sync": "^2.1.0",
+    "prop-types": "^15.7.2",
+    "ramda": "^0.26.1",
+    "react": "16.8.6",
+    "react-native": "0.60.3",
+    "react-native-button": "^2.3.0",
+    "react-native-gesture-handler": "1.2.1",
+    "react-native-iphone-x-helper": "^1.2.0",
+    "react-native-router-flux": "^4.1.0-beta.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/runtime": "^7.5.0",
+    "@kayakyakr/babel-plugin-mobx-async-action": "^7.0.0",
+    "@react-native-community/eslint-config": "^0.0.3",
+    "@storybook/addon-storyshots": "^3.4.0",
+    "@storybook/addons": "^3.4.0",
+    "@storybook/channels": "^3.4.0",
+    "@storybook/react-native": "^3.2.16",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^24.1.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "husky": "^0.14.3",
+    "ignite-router-flux-mobx": "^0.5.1",
+    "jest": "^24.1.0",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "mockery": "^2.1.0",
+    "react-dom": "16.3.0",
+    "react-test-renderer": "16.8.6",
+    "standard": "^10.0.2"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/Tests/**/*.js",
+      "**/?(*.)(spec|test).js?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/Tests/Setup.js"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "<rootDir>/Tests/Setup"
+    ],
+    "preset": "react-native"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "describe",
+      "alert",
+      "test",
+      "jest",
+      "expect",
+      "fetch",
+      "navigator",
+      "__DEV__",
+      "XMLHttpRequest",
+      "FormData",
+      "React$Element"
+    ]
+  },
+  "config": {},
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
+  }
+}
