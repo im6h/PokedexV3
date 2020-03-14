@@ -1,23 +1,23 @@
-import { observable, action, flow } from 'mobx'
-import { Actions } from 'react-native-router-flux'
-import { ignore } from 'mobx-sync'
-import api from '../Services/ApiDefault'
+import { observable, action, flow } from "mobx";
+import { Actions } from "react-native-router-flux";
+import { ignore } from "mobx-sync";
+import api from "../Services/ApiDefault";
 
 export class AuthStore {
   // @desc this field is not persisted
-  @ignore @observable isLoading = false
+  @ignore @observable isLoading = false;
 
-  @observable token = null
-  @observable user = null
+  @observable token = null;
+  @observable user = null;
 
   /**
    * Check user already logged in
    */
-  @action checkLogged () {
+  @action checkLogged() {
     if (this.token && this.user) {
-      Actions.root({ type: 'reset' })
+      Actions.root({ type: "reset" });
     } else {
-      Actions.login({ type: 'reset' })
+      Actions.login({ type: "reset" });
     }
   }
 
@@ -29,29 +29,29 @@ export class AuthStore {
    * @param {String} password
    */
   @action
-  async login (email, password) {
-    this.isLoading = true
-    const response = await api.login(email, password)
+  async login(email, password) {
+    this.isLoading = true;
+    const response = await api.login(email, password);
     if (response.ok) {
-      this.token = response.data.token
-      this.user = response.data.user
-      this.isLoading = false
-      api.setToken(response.data.token)
-      Actions.root({ type: 'reset' })
+      this.token = response.data.token;
+      this.user = response.data.user;
+      this.isLoading = false;
+      api.setToken(response.data.token);
+      Actions.about({});
     } else {
-      console.log('Login failure')
+      console.log("Login failure");
     }
   }
 
   /**
    * logout
    */
-  @action logout () {
-    Actions.login({ type: 'reset' })
-    this.token = null
-    this.user = null
+  @action logout() {
+    Actions.login({ type: "reset" });
+    this.token = null;
+    this.user = null;
   }
 }
 
-const auth = new AuthStore()
-export default auth
+const auth = new AuthStore();
+export default auth;
