@@ -48,7 +48,8 @@ const colors = {
   flyingColor: "#A890F0",
   ghostColor: "#705898",
   grouncColor: "#E0C068",
-  iceColor: "#98D8D8"
+  iceColor: "#98D8D8",
+  waterColor: "#5BC7E5"
 };
 
 export default colors;

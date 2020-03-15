@@ -1,18 +1,21 @@
-import { StyleSheet } from 'react-native'
-import { Metrics, ApplicationStyles } from '../../Themes'
-
-export default StyleSheet.create({
-  ...ApplicationStyles.screen,
-  container: {
-    paddingBottom: Metrics.baseMargin
+import { StyleSheet } from "react-native";
+const style = StyleSheet.create({
+  lauchScreen: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
   },
-  logo: {
-    marginTop: Metrics.doubleSection,
-    height: Metrics.images.logo,
-    width: Metrics.images.logo,
-    resizeMode: 'contain'
+  image: {
+    height: 212,
+    width: 212
   },
-  centered: {
-    alignItems: 'center'
+  action: {
+    flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10
   }
-})
+});
+export default style;
