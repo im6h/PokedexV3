@@ -1,16 +1,12 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import style from "./AboutScreenStyles";
+import TopIcon from "../../Components/TopIcon/TopIcon";
 class AboutScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, flexDirection: "column" }}>
-        <View style={style.imageIcon}>
-          <Image
-            style={style.image}
-            source={require("../../Images/Icons/icon.jpg")}
-          />
-        </View>
+        <TopIcon />
         <View style={style.content}>
           <View style={style.contentTitle}>
             <Text style={{ fontSize: 18, fontWeight: "bold" }}>POKEDEX</Text>

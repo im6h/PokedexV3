@@ -1,13 +1,5 @@
 import { StyleSheet } from "react-native";
 const style = StyleSheet.create({
-  imageIcon: {},
-  image: {
-    height: 133,
-    width: 136,
-    position: "absolute",
-    top: -40,
-    right: -25
-  },
   content: {
     flex: 1,
     padding: 0
@@ -15,7 +7,7 @@ const style = StyleSheet.create({
   contentTitle: {
     flex: 2,
     flexDirection: "column",
-    paddingLeft: 10,
+    paddingLeft: 20,
     marginTop: 40,
     justifyContent: "center"
   },

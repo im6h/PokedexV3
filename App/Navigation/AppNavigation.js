@@ -3,14 +3,13 @@ import { Platform, StyleSheet } from "react-native";
 import { Scene, Router } from "react-native-router-flux";
 import AboutScreen from "../Screens/AboutScreen/AboutScreen";
 import LoginScreen from "../Screens/LoginScreen/LoginScreen";
-const getSceneStyle = () => ({});
+import SplashScreen from "../Screens/SplashScreen/SplashScreen";
 class AppNavigation extends Component {
   render() {
     return (
       <Router>
         <Scene key="root">
-          <Scene component={LoginScreen} key="login" title="Login" initial />
-          <Scene component={AboutScreen} key="about" navTransparent />
+          <Scene component={AboutScreen} key="about" navTransparent initial />
         </Scene>
       </Router>
     );
