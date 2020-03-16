@@ -1,7 +1,8 @@
-import auth from './AuthStore'
-
+import auth from "./AuthStore";
+import pokemon from "./PokemonStore";
 const stores = {
-  auth
-}
+  auth,
+  pokemon
+};
 
-export default stores
+export default stores;

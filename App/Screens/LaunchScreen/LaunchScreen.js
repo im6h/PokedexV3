@@ -31,7 +31,7 @@ class LauchScreen extends React.Component {
           <View style={style.action}>
             <TouchableOpacity
               style={{
-                backgroundColor: Color.grassColor,
+                backgroundColor: Color.Grass,
                 width: 120,
                 height: 120,
                 justifyContent: "center",
@@ -58,7 +58,7 @@ class LauchScreen extends React.Component {
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                backgroundColor: Color.poisonColor,
+                backgroundColor: Color.Poison,
                 width: 120,
                 height: 120,
                 justifyContent: "center",
@@ -85,7 +85,7 @@ class LauchScreen extends React.Component {
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                backgroundColor: Color.fireColor,
+                backgroundColor: Color.Fire,
                 width: 120,
                 height: 120,
                 justifyContent: "center",
@@ -112,7 +112,7 @@ class LauchScreen extends React.Component {
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                backgroundColor: Color.waterColor,
+                backgroundColor: Color.Water,
                 width: 120,
                 height: 120,
                 justifyContent: "center",
