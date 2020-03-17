@@ -16,7 +16,7 @@ const style = StyleSheet.create({
     alignItems: "center",
     margin: 10,
     width: 160,
-    height: 105,
+    height: 140,
     backgroundColor: colors.backgroundType,
     shadowColor: "#000",
     shadowOffset: {
@@ -30,8 +30,7 @@ const style = StyleSheet.create({
   item__display: {
     flex: 1,
     flexDirection: "column",
-    justifyContent: "center",
-    paddingLeft: 10
+    justifyContent: "center"
   },
   item__text: {
     textAlign: "center",

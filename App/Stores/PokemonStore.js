@@ -3,11 +3,33 @@ import apiPokemon from "../Services/ApiPokemon";
 
 class PokemonStore {
   @observable listPokemon = [];
+  @observable listPoKemonNext = [];
+  @observable pokemon = {};
   @action async getListPokemon() {
     try {
       const respone = await apiPokemon.getListPokemons();
       if (respone.status === 200 && respone.data) {
-        this.listPokemon = respone.data.pokemon;
+        this.listPokemon = respone.data.results;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  @action async getListPokemonNext(offset) {
+    try {
+      const respone = await apiPokemon.getListPokemonNext(offset);
+      if (respone.status === 200 && respone.data) {
+        this.listPokemonNext = respone.data.results;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  @action async getPokemon(slug) {
+    try {
+      const respone = await apiPokemon.getPokemon(slug);
+      if (respone.status === 200 && respone.data) {
+        this.pokemon = respone.data;
       }
     } catch (error) {
       console.log(error);
