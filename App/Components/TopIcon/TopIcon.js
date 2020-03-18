@@ -7,7 +7,7 @@ class TopIcon extends React.Component {
       <View style={style.imageIcon}>
         <Image
           style={style.image}
-          source={require("../../Images/Icons/icon.jpg")}
+          source={require("../../Images/Icons/pokeball.png")}
         />
       </View>
     );

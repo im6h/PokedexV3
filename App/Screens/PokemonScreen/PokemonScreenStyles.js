@@ -14,9 +14,9 @@ const style = StyleSheet.create({
     borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
-    margin: 10,
-    width: 160,
-    height: 140,
+    margin: 5,
+    width: "45%",
+    height: 100,
     backgroundColor: colors.backgroundType,
     shadowColor: "#000",
     shadowOffset: {
@@ -34,13 +34,8 @@ const style = StyleSheet.create({
   },
   item__text: {
     textAlign: "center",
-    color: "black",
-    fontSize: 12
-  },
-  item__color: {
-    textAlign: "center",
-    color: "white",
-    fontSize: 12
+    color: "#110A0A",
+    fontSize: 11
   }
 });
 export default style;

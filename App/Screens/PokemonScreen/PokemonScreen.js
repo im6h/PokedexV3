@@ -12,6 +12,7 @@ import { inject, observer } from "mobx-react";
 import TopIcon from "../../Components/TopIcon/TopIcon";
 import colors from "../../Themes/Colors";
 import { Actions } from "react-native-router-flux";
+import { formatNumberPokemon } from "../../Utils/format";
 const Item = ({ pokemon, index }) => {
   return (
     <TouchableOpacity
@@ -20,13 +21,34 @@ const Item = ({ pokemon, index }) => {
         Actions.pokemon_detail({ pokemon: pokemon });
       }}
     >
-      <View style={{ flex: 1, flexDirection: "column" }}>
+      <Image
+        style={{
+          height: 70,
+          width: 70,
+          tintColor: "black",
+          position: "absolute",
+          bottom: 7.5,
+          right: 9,
+          tintColor: "#E5E5E5",
+          transform: [{ rotate: "119deg" }]
+        }}
+        source={require("../../Images/Icons/pokeball.png")}
+      />
+      <View
+        style={{
+          flex: 2,
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
         <View style={style.item__display}>
+          <Text style={style.item__text}>{formatNumberPokemon(index)}</Text>
           <Text style={style.item__text}>{pokemon.name.toUpperCase()}</Text>
         </View>
         <View
           style={{
-            flex: 3,
+            flex: 1,
             justifyContent: "center",
             alignItems: "center"
           }}
@@ -94,19 +116,22 @@ class PokemonScreen extends React.Component {
           <TopIcon />
         </View>
         <View style={{ flex: 9 }}>
-          <Text style={style.pokedexText}>POKEDEX</Text>
-          <FlatList
-            style={{ flex: 1 }}
-            data={this.state.data}
-            ListFooterComponent={this.renderFooter.bind(this)}
-            numColumns={2}
-            onEndReachedThreshold={0.4}
-            onEndReached={this.loadMoreData.bind(this)}
-            keyExtractor={({ item }, index) => index.toString()}
-            renderItem={({ item, index }) => {
-              return <Item pokemon={item} index={index + 1} />;
-            }}
-          />
+          <Text style={style.pokedexText}>POKEDEX: 964</Text>
+          <View
+            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          >
+            <FlatList
+              data={this.state.data}
+              ListFooterComponent={this.renderFooter.bind(this)}
+              numColumns={2}
+              onEndReachedThreshold={0.4}
+              onEndReached={this.loadMoreData.bind(this)}
+              keyExtractor={({ item }, index) => index.toString()}
+              renderItem={({ item, index }) => {
+                return <Item pokemon={item} index={index + 1} />;
+              }}
+            />
+          </View>
         </View>
       </View>
     );
