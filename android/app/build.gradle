@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.pokedex"
+        applicationId "com.tjjone98.pokedex"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

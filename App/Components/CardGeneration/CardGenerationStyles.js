@@ -1,16 +1,6 @@
 import { StyleSheet } from "react-native";
-import colors from "../../Themes/Colors";
 const style = StyleSheet.create({
-  pokedexScreen: {
-    flex: 1
-  },
-  pokedexText: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 10,
-    marginLeft: 10
-  },
-  item: {
+  cardGeneration: {
     margin: 5,
     flex: 1,
     justifyContent: "center",
@@ -18,7 +8,7 @@ const style = StyleSheet.create({
     borderWidth: 1,
     borderColor: "transparent",
     borderRadius: 10,
-    backgroundColor: colors.backgroundType,
+    backgroundColor: "white",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -26,17 +16,13 @@ const style = StyleSheet.create({
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
+
     elevation: 4
   },
-  item__display: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center"
-  },
-  item__text: {
-    textAlign: "center",
-    color: "#110A0A",
-    fontSize: 11
+  imageThumbnail: {
+    width: 100,
+    height: 50
   }
 });
+
 export default style;

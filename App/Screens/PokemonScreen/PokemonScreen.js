@@ -54,9 +54,9 @@ const Item = ({ pokemon, index }) => {
           }}
         >
           <Image
-            style={{ height: 60, width: 60 }}
+            style={{ height: 80, width: 80 }}
             source={{
-              uri: `https://pokeres.bastionbot.org/images/pokemon/${index}.png`
+              uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`
             }}
           />
         </View>
@@ -116,10 +116,8 @@ class PokemonScreen extends React.Component {
           <TopIcon />
         </View>
         <View style={{ flex: 9 }}>
-          <Text style={style.pokedexText}>POKEDEX: 964</Text>
-          <View
-            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-          >
+          <Text style={style.pokedexText}>Total pokemon: 964</Text>
+          <View style={{ flex: 1 }}>
             <FlatList
               data={this.state.data}
               ListFooterComponent={this.renderFooter.bind(this)}

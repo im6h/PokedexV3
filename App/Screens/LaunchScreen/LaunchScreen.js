@@ -4,140 +4,202 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Color from "../../Themes/Colors";
 import style from "./LaunchScreenStyles";
 import { Actions } from "react-native-router-flux";
-
+import CardGeneration from "../../Components/CardGeneration/CardGeneration";
 class LauchScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: [
+        {
+          item: "I"
+        },
+        {
+          item: "II"
+        },
+        {
+          item: "III"
+        },
+        {
+          item: "IV"
+        },
+        {
+          item: "V"
+        },
+        {
+          item: "VI"
+        },
+        {
+          item: "VII"
+        },
+        {
+          item: "VIII"
+        }
+      ]
+    };
   }
   render() {
     return (
-      <View style={style.lauchScreen}>
-        <View
-          style={{
-            flex: 5,
-            flexDirection: "row",
-            justifyContent: "flex-start",
-            alignItems: "center"
-          }}
-        >
-          <Image
-            style={style.image}
-            source={require("../../Images/pikachu.png")}
-          />
-          <Text>What do you want?</Text>
-        </View>
-        <View style={{ flex: 5 }}>
-          <View style={style.action}>
-            <TouchableOpacity
-              style={{
-                backgroundColor: Color.Grass,
-                width: 120,
-                height: 120,
-                justifyContent: "center",
-                alignItems: "center",
-                borderWidth: 1,
-                borderColor: "transparent",
-                margin: 5,
-                borderRadius: 15
-              }}
-              onPress={() => {
-                Actions.pokemon({});
-              }}
-            >
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-              >
-                <Icon name="pokeball" size={30} color="#FFF" />
-                <Text style={{ color: "white" }}>Pokemon</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                backgroundColor: Color.Poison,
-                width: 120,
-                height: 120,
-                justifyContent: "center",
-                alignItems: "center",
-                borderWidth: 1,
-                borderColor: "transparent",
-                margin: 5,
-                borderRadius: 15
-              }}
-              onPress={() => {
-                Actions.type({});
-              }}
-            >
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-              >
-                <Icon name="notification-clear-all" size={30} color="#FFF" />
-                <Text style={{ color: "white" }}>Type</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                backgroundColor: Color.Fire,
-                width: 120,
-                height: 120,
-                justifyContent: "center",
-                alignItems: "center",
-                borderWidth: 1,
-                borderColor: "transparent",
-                margin: 5,
-                borderRadius: 15
-              }}
-              onPress={() => {
-                Actions.ability({});
-              }}
-            >
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-              >
-                <Icon name="webhook" size={30} color="#FFF" />
-                <Text style={{ color: "white" }}>Ability</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                backgroundColor: Color.Water,
-                width: 120,
-                height: 120,
-                justifyContent: "center",
-                alignItems: "center",
-                borderWidth: 1,
-                borderColor: "transparent",
-                margin: 5,
-                borderRadius: 15
-              }}
-              onPress={() => {
-                Actions.about({});
-              }}
-            >
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-              >
-                <Icon name="information-outline" size={30} color="#FFF" />
-                <Text style={{ color: "white" }}>About</Text>
-              </View>
-            </TouchableOpacity>
+      <View style={{ flex: 1, backgroundColor: "#DDDDDD" }}>
+        <View style={style.lauchScreen}>
+          <View
+            style={{
+              flex: 5,
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              alignItems: "center"
+            }}
+          >
+            <Image
+              style={style.image}
+              source={require("../../Images/pikachu.png")}
+            />
           </View>
+          <View style={{ flex: 3 }}>
+            <View style={style.action}>
+              <TouchableOpacity
+                style={{
+                  backgroundColor: Color.Grass,
+                  flex: 1,
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderWidth: 1,
+                  borderColor: "transparent",
+                  borderTopStartRadius: 50,
+                  borderBottomStartRadius: 50
+                }}
+                onPress={() => {
+                  Actions.pokemon({});
+                }}
+              >
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <Icon
+                    style={{ flex: 4, marginLeft: 20 }}
+                    name="pokeball"
+                    size={30}
+                    color="#FFF"
+                  />
+                  <Text style={{ flex: 6, color: "white" }}>Pokemon</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  backgroundColor: Color.Poison,
+                  flex: 1,
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderWidth: 1,
+                  borderColor: "transparent",
+                  borderTopStartRadius: 50,
+                  borderBottomStartRadius: 50
+                }}
+                onPress={() => {
+                  Actions.type({});
+                }}
+              >
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <Icon
+                    style={{ flex: 4, marginLeft: 20 }}
+                    name="notification-clear-all"
+                    size={30}
+                    color="#FFF"
+                  />
+                  <Text style={{ flex: 6, color: "white" }}>Type</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  backgroundColor: Color.Fire,
+                  flex: 1,
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderWidth: 1,
+                  borderColor: "transparent",
+                  borderTopStartRadius: 50,
+                  borderBottomStartRadius: 50
+                }}
+                onPress={() => {
+                  Actions.ability({});
+                }}
+              >
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <Icon
+                    style={{ flex: 4, marginLeft: 20 }}
+                    name="webhook"
+                    size={30}
+                    color="#FFF"
+                  />
+                  <Text style={{ flex: 6, color: "white" }}>Ability</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  backgroundColor: Color.Water,
+                  flex: 1,
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderWidth: 1,
+                  borderColor: "transparent",
+                  borderTopStartRadius: 50,
+                  borderBottomStartRadius: 50
+                }}
+                onPress={() => {
+                  Actions.about({});
+                }}
+              >
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <Icon
+                    style={{ flex: 4, marginLeft: 20 }}
+                    name="information-outline"
+                    size={30}
+                    color="#FFF"
+                  />
+                  <Text style={{ flex: 6, color: "white" }}>About</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <View style={style.info}>
+          <FlatList
+            data={this.state.data}
+            numColumns={2}
+            listKey={({ item, index }) => index.toString()}
+            renderItem={({ item }) => {
+              return <CardGeneration item={item} />;
+            }}
+          />
         </View>
       </View>
     );
