@@ -19,7 +19,8 @@ const style = StyleSheet.create({
     elevation: 5
   },
   info: {
-    flex: 1
+    flex: 1,
+    marginTop: 10
   },
   image: {
     height: 210,

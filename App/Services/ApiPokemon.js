@@ -12,6 +12,9 @@ class ApiPokemon {
   async getPokemon(slug) {
     return axios.get(`https://pokeapi.co/api/v2/pokemon/${slug}`);
   }
+  async getListTypePokemon() {
+    return axios.get("https://pokeapi.co/api/v2/type");
+  }
 }
 const apiPokemon = new ApiPokemon();
 export default apiPokemon;

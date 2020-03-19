@@ -58,7 +58,7 @@ class LauchScreen extends React.Component {
             <View style={style.action}>
               <TouchableOpacity
                 style={{
-                  backgroundColor: Color.Grass,
+                  backgroundColor: Color.grass,
                   flex: 1,
                   flexDirection: "row",
                   justifyContent: "center",
@@ -91,7 +91,7 @@ class LauchScreen extends React.Component {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{
-                  backgroundColor: Color.Poison,
+                  backgroundColor: Color.poison,
                   flex: 1,
                   flexDirection: "row",
                   justifyContent: "center",
@@ -102,7 +102,7 @@ class LauchScreen extends React.Component {
                   borderBottomStartRadius: 50
                 }}
                 onPress={() => {
-                  Actions.type({});
+                  Actions.typePokemon({});
                 }}
               >
                 <View
@@ -124,7 +124,7 @@ class LauchScreen extends React.Component {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{
-                  backgroundColor: Color.Fire,
+                  backgroundColor: Color.fire,
                   flex: 1,
                   flexDirection: "row",
                   justifyContent: "center",
@@ -157,7 +157,7 @@ class LauchScreen extends React.Component {
               </TouchableOpacity>
               <TouchableOpacity
                 style={{
-                  backgroundColor: Color.Water,
+                  backgroundColor: Color.water,
                   flex: 1,
                   flexDirection: "row",
                   justifyContent: "center",

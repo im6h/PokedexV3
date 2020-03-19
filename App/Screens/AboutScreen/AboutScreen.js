@@ -17,17 +17,11 @@ class AboutScreen extends React.Component {
             </View>
             <View style={style.contentBodyInfo}>
               <Text style={{ color: "white" }}>
-                - Easily spin up a new React Native app with best practices
-                built-in - No runtime! This is a developer tool only, not a
-                library you have to depend on and figure out how to upgrade -
-                Anever-expanding list of boilerplates and plugins to jump-start
-                your app - An amazing community of other Ignite / React Native
-                developers when you need help - Battle tested and used every day
-                by the developers at Infinite Red and thousands of developers
-                around the world - Works on macOS, Windows, and Linux because
-                not all React Native developers are on one platform Saves an
-                average of two weeks on your React Native development
+                Welcome to the Pokedex app. I am very pleased to present to you
+                the third edition of the pokedex app using React-native
+                platform.
               </Text>
+              <Text>Api used to:</Text>
             </View>
             <View style={style.contentBodyFooter}>
               <Text style={{ color: "white" }}>Github</Text>
