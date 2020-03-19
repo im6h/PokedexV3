@@ -12,7 +12,7 @@ const style = StyleSheet.create({
     marginBottom: 10
   },
   name: {
-    fontSize: 20,
+    fontSize: 14,
     color: "white"
   }
 });

@@ -4,6 +4,8 @@ import colors from "../../Themes/Colors";
 import TopIcon from "../../Components/TopIcon/TopIcon";
 import { inject, observer } from "mobx-react";
 import style from "./TypeScreenStyles";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import SearchBar from "../../Components/SearchBar/SearchBar";
 const Item = ({ item }) => {
   return (
     <TouchableOpacity
@@ -16,22 +18,12 @@ const Item = ({ item }) => {
         width: 100,
         height: 60,
         flex: 1,
+        flexDirection: "row",
         justifyContent: "center",
         alignItems: "center"
       }}
     >
-      <Image
-        style={{
-          height: 55,
-          width: 55,
-          position: "absolute",
-          top: 2,
-          right: 0,
-          tintColor: "#F5EEEE",
-          transform: [{ rotate: "90deg" }]
-        }}
-        source={require("../../Images/Icons/pokeball.png")}
-      />
+      <Icon style={{}} name="pokeball" size={40} color="#FFF" />
       <Text style={style.name}>{item.name.toUpperCase()}</Text>
     </TouchableOpacity>
   );
@@ -51,6 +43,7 @@ class TypeScreen extends React.Component {
         <View style={{ flex: 1.5 }}>
           <TopIcon />
         </View>
+        <SearchBar />
         <View style={{ flex: 8 }}>
           <Text style={style.totalType}>Total Types: 20</Text>
           <FlatList

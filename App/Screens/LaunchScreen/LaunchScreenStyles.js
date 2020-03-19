@@ -23,6 +23,7 @@ const style = StyleSheet.create({
     marginTop: 10
   },
   image: {
+    marginLeft: 15,
     height: 210,
     width: 210
   },

@@ -10,9 +10,9 @@ import {
 import style from "./PokemonScreenStyles";
 import { inject, observer } from "mobx-react";
 import TopIcon from "../../Components/TopIcon/TopIcon";
-import colors from "../../Themes/Colors";
 import { Actions } from "react-native-router-flux";
 import { formatNumberPokemon } from "../../Utils/format";
+import SearchBar from "../../Components/SearchBar/SearchBar";
 const Item = ({ pokemon, index }) => {
   return (
     <TouchableOpacity
@@ -115,6 +115,7 @@ class PokemonScreen extends React.Component {
         <View style={{ flex: 1 }}>
           <TopIcon />
         </View>
+        <SearchBar />
         <View style={{ flex: 9 }}>
           <Text style={style.pokedexText}>Total pokemon: 964</Text>
           <View style={{ flex: 1 }}>
