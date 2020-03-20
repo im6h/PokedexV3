@@ -99,10 +99,11 @@ class PokemonScreen extends React.Component {
       loading: true
     });
     this.state.offset += 10;
-    await this.props.pokemon.getListPokemonNext(this.state.offset);
-    this.setState({
-      data: this.state.data.concat(this.props.pokemon.listPokemonNext),
-      loading: false
+    this.props.pokemon.getListPokemonNext(this.state.offset).then(() => {
+      this.setState({
+        data: this.state.data.concat(this.props.pokemon.listPokemonNext),
+        loading: false
+      });
     });
   };
   renderFooter = () => {
@@ -121,7 +122,7 @@ class PokemonScreen extends React.Component {
           <View style={{ flex: 1 }}>
             <FlatList
               data={this.state.data}
-              ListFooterComponent={this.renderFooter.bind(this)}
+              ListFooterComponent={this.renderFooter}
               numColumns={2}
               onEndReachedThreshold={0.4}
               onEndReached={this.loadMoreData.bind(this)}
