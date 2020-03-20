@@ -13,68 +13,8 @@ import TopIcon from "../../Components/TopIcon/TopIcon";
 import { Actions } from "react-native-router-flux";
 import { formatNumberPokemon } from "../../Utils/format";
 import SearchBar from "../../Components/SearchBar/SearchBar";
-const Item = ({ pokemon, index }) => {
-  return (
-    <TouchableOpacity
-      style={style.item}
-      onPress={() => {
-        Actions.pokemon_detail({ pokemon: pokemon });
-      }}
-    >
-      <Image
-        style={{
-          height: 70,
-          width: 70,
-          tintColor: "black",
-          position: "absolute",
-          bottom: 7.5,
-          right: 9,
-          tintColor: "#E5E5E5",
-          transform: [{ rotate: "119deg" }]
-        }}
-        source={require("../../Images/Icons/pokeball.png")}
-      />
-      <View
-        style={{
-          flex: 2,
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center"
-        }}
-      >
-        <View style={style.item__display}>
-          <Text style={style.item__text}>{formatNumberPokemon(index)}</Text>
-          <Text style={style.item__text}>{pokemon.name.toUpperCase()}</Text>
-        </View>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <Image
-            style={{ height: 80, width: 80 }}
-            source={{
-              uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`
-            }}
-          />
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
-};
-const renderSeparator = () => {
-  return (
-    <View
-      style={{
-        height: 2,
-        width: "100%",
-        backgroundColor: "#CED0CE"
-      }}
-    />
-  );
-};
+import CardPokemon from "../../Components/CardPokemon/CardPokemon";
+import { construct } from "ramda";
 
 @inject("pokemon")
 @observer
@@ -83,7 +23,7 @@ class PokemonScreen extends React.Component {
     super(props);
     this.state = {
       offset: 0,
-      loading: true,
+      loading: false,
       data: []
     };
   }
@@ -128,7 +68,7 @@ class PokemonScreen extends React.Component {
               onEndReached={this.loadMoreData.bind(this)}
               keyExtractor={({ item }, index) => index.toString()}
               renderItem={({ item, index }) => {
-                return <Item pokemon={item} index={index + 1} />;
+                return <CardPokemon pokemon={item} />;
               }}
             />
           </View>

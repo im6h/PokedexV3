@@ -2,12 +2,15 @@ import React from "react";
 import { View, Text, Image, FlatList } from "react-native";
 import colors from "../../../Themes/Colors";
 class Pokemon extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <View style={{ flex: 1 }}>
         <View
           style={{
-            backgroundColor: colors.Water,
+            backgroundColor: colors.backgroundType,
             flex: 3,
             justifyContent: "center",
             alignItems: "center",

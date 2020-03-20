@@ -10,7 +10,7 @@ class ApiPokemon {
     );
   }
   async getPokemon(slug) {
-    return axios.get(`https://pokeapi.glitch.me/v1/pokemon/${slug}`);
+    return axios.get(`https://pokeapi.co/api/v2/pokemon/${slug}`);
   }
   async getListTypePokemon() {
     return axios.get("https://pokeapi.co/api/v2/type");
