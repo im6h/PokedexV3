@@ -10,11 +10,15 @@ import {
 import style from "./PokemonScreenStyles";
 import { inject, observer } from "mobx-react";
 import TopIcon from "../../Components/TopIcon/TopIcon";
+import colors from "../../Themes/Colors";
 import { Actions } from "react-native-router-flux";
 import { formatNumberPokemon } from "../../Utils/format";
+<<<<<<< HEAD
 import SearchBar from "../../Components/SearchBar/SearchBar";
 import CardPokemon from "../../Components/CardPokemon/CardPokemon";
 
+=======
+>>>>>>> parent of fc5c297... feat[UI]: add search bar demo
 const Item = ({ pokemon, index }) => {
   return (
     <TouchableOpacity
@@ -105,7 +109,6 @@ class PokemonScreen extends React.Component {
         <View style={{ flex: 1 }}>
           <TopIcon />
         </View>
-        <SearchBar />
         <View style={{ flex: 9 }}>
           <Text style={style.pokedexText}>Total pokemon: 964</Text>
           <View style={{ flex: 1 }}>
