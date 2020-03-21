@@ -1,14 +1,14 @@
-import '../Config'
-import React, { Component } from 'react'
-import { Provider } from 'mobx-react'
-import RootContainer from './RootContainer'
-import stores from '../Stores'
+import "../Config";
+import React, { Component } from "react";
+import { Provider } from "mobx-react";
+import RootContainer from "./RootContainer";
+import stores from "../Stores";
 
 /**
  * This is the root component of our app.
  */
 class App extends Component {
-  render () {
+  render() {
     return (
       <Provider
         // rootStore={rootStore}
@@ -16,8 +16,8 @@ class App extends Component {
       >
         <RootContainer />
       </Provider>
-    )
+    );
   }
 }
 
-export default App
+export default App;

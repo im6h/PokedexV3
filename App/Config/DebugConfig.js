@@ -4,4 +4,4 @@ export default {
   yellowBox: false,
   includeExamples: __DEV__,
   mobxLogger: __DEV__
-}
+};

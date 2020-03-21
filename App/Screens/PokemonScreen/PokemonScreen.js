@@ -14,8 +14,58 @@ import { Actions } from "react-native-router-flux";
 import { formatNumberPokemon } from "../../Utils/format";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 import CardPokemon from "../../Components/CardPokemon/CardPokemon";
-import { construct } from "ramda";
 
+const Item = ({ pokemon, index }) => {
+  return (
+    <TouchableOpacity
+      style={style.item}
+      onPress={() => {
+        Actions.pokemon_detail({ pokemon: pokemon });
+      }}
+    >
+      <Image
+        style={{
+          height: 70,
+          width: 70,
+          tintColor: "black",
+          position: "absolute",
+          bottom: 7.5,
+          right: 9,
+          tintColor: "#E5E5E5",
+          transform: [{ rotate: "119deg" }]
+        }}
+        source={require("../../Images/Icons/pokeball.png")}
+      />
+      <View
+        style={{
+          flex: 2,
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <View style={style.item__display}>
+          <Text style={style.item__text}>{formatNumberPokemon(index)}</Text>
+          <Text style={style.item__text}>{pokemon.name.toUpperCase()}</Text>
+        </View>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <Image
+            style={{ height: 80, width: 80 }}
+            source={{
+              uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`
+            }}
+          />
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
 @inject("pokemon")
 @observer
 class PokemonScreen extends React.Component {
@@ -63,11 +113,13 @@ class PokemonScreen extends React.Component {
               data={this.state.data}
               ListFooterComponent={this.renderFooter.bind(this)}
               numColumns={2}
+              removeClippedSubviews={true}
+              initialNumToRender={10}
               onEndReachedThreshold={0.4}
               onEndReached={this.loadMoreData.bind(this)}
               keyExtractor={({ item }, index) => index.toString()}
               renderItem={({ item, index }) => {
-                return <CardPokemon pokemon={item} />;
+                return <Item index={index + 1} pokemon={item} />;
               }}
             />
           </View>
