@@ -15,14 +15,6 @@ class ApiPokemon {
   async getListTypePokemon() {
     return axios.get("https://pokeapi.co/api/v2/type");
   }
-  async getListAbilityPokemon() {
-    return axios.get("https://pokeapi.co/api/v2/ability/");
-  }
-  async getListAbilityPokemonNext(offset) {
-    return axios.get(
-      `https://pokeapi.co/api/v2/ability/?offset=${offset}limit=10`
-    );
-  }
 }
 const apiPokemon = new ApiPokemon();
 export default apiPokemon;

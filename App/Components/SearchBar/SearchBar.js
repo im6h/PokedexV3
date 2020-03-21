@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
     return (
       <View style={style.searchBar}>
         <View style={style.wrapper}>
-          <TextInput style={style.inputSearch} placeholder="Search" />
+          <TextInput style={style.inputSearch} />
           <Icon
             style={style.iconSearch}
             name="search"

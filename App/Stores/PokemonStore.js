@@ -5,8 +5,6 @@ class PokemonStore {
   @observable listPokemon = [];
   @observable listPoKemonNext = [];
   @observable listTypePokemon = [];
-  @observable listAbilityPokemon = [];
-  @observable listAbilityPokemonNext = [];
   @observable pokemon = {};
   @action async getListPokemon() {
     try {
@@ -32,7 +30,7 @@ class PokemonStore {
     try {
       const respone = await apiPokemon.getPokemon(slug);
       if (respone.status === 200 && respone.data) {
-        this.pokemon = respone.data[0];
+        this.pokemon = respone.data;
       }
     } catch (error) {
       console.log(error);
@@ -43,26 +41,6 @@ class PokemonStore {
       const respone = await apiPokemon.getListTypePokemon();
       if (respone.status === 200 && respone.data) {
         this.listTypePokemon = respone.data.results;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  @action async getListAbilityPokemon() {
-    try {
-      const respone = await apiPokemon.getListAbilityPokemon();
-      if (respone.status === 200 && respone.data) {
-        this.listAbilityPokemon = respone.data.results;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  @action async getListAbilityPokemonNext(offset) {
-    try {
-      const respone = await apiPokemon.getListAbilityPokemonNext(offset);
-      if (respone.status === 200 && respone.data) {
-        this.listAbilityPokemonNext = respone.data.results;
       }
     } catch (error) {
       console.log(error);

@@ -6,7 +6,6 @@ import AboutScreen from "../Screens/AboutScreen/AboutScreen";
 import PokemonScreen from "../Screens/PokemonScreen/PokemonScreen";
 import PokemonDetail from "../Screens/DetailScreen/Pokemon/Pokemon";
 import TypeScreen from "../Screens/TypeScreen/TypeScreen";
-import AbilityScreen from "../Screens/AbilityScreen/AbilityScreen";
 class AppNavigation extends Component {
   render() {
     return (
@@ -21,7 +20,6 @@ class AppNavigation extends Component {
           />
           <Scene component={AboutScreen} key="about" navTransparent />
           <Scene component={TypeScreen} key="typePokemon" navTransparent />
-          <Scene component={AbilityScreen} key="ability" navTransparent />
         </Scene>
       </Router>
     );
